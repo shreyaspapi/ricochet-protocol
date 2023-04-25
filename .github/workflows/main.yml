@@ -15,10 +15,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '18.x'
-      - run: yarn --ignore-scripts
+      - run: npm install
         shell: bash
-      - name: Create local node and deploy
+      - name: Create local node
         run: |
-          yarn hardhat node
+          npx hardhat node
       - name: Run Tests
-        run: yarn hardhat test
+        run: mpx hardhat test
