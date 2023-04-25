@@ -1,7 +1,7 @@
 name: CI
 on:
   push:
-    branches: [github-action]
+    branches: [github-action, v2]
   pull_request:
     branches: [v2]
 
@@ -19,7 +19,6 @@ jobs:
         shell: bash
       - name: Create local node and deploy
         run: |
-          yarn hardhat node &
-          yarn hardhat run scripts/deploy.ts --network localhost
+          yarn hardhat node
       - name: Run Tests
         run: yarn hardhat test
